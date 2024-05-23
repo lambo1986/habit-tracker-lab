@@ -25,10 +25,14 @@ gem "puma", ">= 5.0"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
-
+gem 'jwt'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
+gem 'bcrypt'
+gem 'faraday'
+gem 'graphql'
+gem 'aws-sdk-s3', require: false
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -38,6 +42,24 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'simplecov'
+  gem 'jsonapi-serializer'
+  gem 'pry'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'orderly'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -46,4 +68,3 @@ group :development do
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
-
